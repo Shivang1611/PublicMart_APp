@@ -14,6 +14,9 @@ import Categories from './Screens/Categories'
 
 //types
 export type Rootstackparamlist={
+  HomePage:{
+    home:Product
+  },
   Home:{
     home:Home
   },
@@ -35,8 +38,10 @@ const stack=createNativeStackNavigator<Rootstackparamlist>()
 const App = () => {
   return (
    <NavigationContainer>
-    <stack.Navigator initialRouteName='Home'>
-      <stack.Screen name="Home" component={Home}/>
+     <stack.Navigator initialRouteName='Home'> 
+      <stack.Screen name='Home' component={Home} options={{
+            headerShown: false, 
+          }} />
       <stack.Screen name="Categories" component={Categories} options={{
         title:"Categories"
       }}/>

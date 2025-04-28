@@ -12,7 +12,7 @@ interface Product{
 
 }
 interface Home{
-    id:1,
+    id:string,
     name:string,
    image:string
 }
