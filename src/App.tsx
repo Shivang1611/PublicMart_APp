@@ -43,7 +43,20 @@ const App = () => {
             headerShown: false, 
           }} />
       <stack.Screen name="Categories" component={Categories} options={{
-        title:"Categories"
+        title:"Categories",
+        headerBackButtonDisplayMode:"default",
+        // Custom header logic can be implemented here if needed
+        headerStyle: {
+          backgroundColor: '#DFE6E9',
+        },
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontSize: 24,
+          fontWeight: 'bold',
+        },
+          
+       
+        
       }}/>
       <stack.Screen name="Product" component={Product} options={{
         title:"Product"
