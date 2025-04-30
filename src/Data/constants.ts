@@ -56,4 +56,24 @@ export const PRODUCTS_LIST: Product[] = [
       ],
     },
   ];
+
+
+  export const Trending_Img=[
+    {id: '1', name: 'Men Shirts', image: require('../Assets/Clothes/C2.png')},
+    {id: '2', name: 'T-shirts', image: require('../Assets/Clothes/C3.png')},
+    {id: '3', name: 'Kurta', image: require('../Assets/Clothes/C4.png')},
+    {id: '4', name: 'Saree', image: require('../Assets/Clothes/C6.webp')},
+    {id: '5', name: 'Varanasi Saree', image: require('../Assets/Clothes/C7.jpeg')},
+    {id: '6', name: 'Washing Machine', image: require('../Assets/Clothes/C8.jpeg')},
+    {id: '7', name: 'Iron', image: require('../Assets/Clothes/C9.jpeg')},
+    {id: '8', name: 'Washing Machine', image: require('../Assets/Clothes/C10.jpeg')},
+    {id: '9', name: 'Bed', image: require('../Assets/Clothes/C11.jpeg')},
+    {id: '10', name: 'Green Color Top', image: require('../Assets/Clothes/C12.jpeg')},
+    {id: '11', name: 'Yellow Top', image: require('../Assets/Clothes/C13.jpeg')},
+    {id: '12', name: 'Regular fit Top', image: require('../Assets/Clothes/C14.jpeg')},
+    {id: '13', name: 'White Top', image: require('../Assets/Clothes/C15.jpeg')},
+    {id: '14', name: 'Kurti', image: require('../Assets/Clothes/C16.jpeg')},
+    {id: '15', name: 'White Shirt', image: require('../Assets/Clothes/C16.jpeg')},
+    
+  ]
   

@@ -12,6 +12,8 @@ import {
 import React, {PropsWithChildren, useState} from 'react';
 import {useNavigation, NavigationProp} from '@react-navigation/native';
 import {Searchbar} from 'react-native-paper';
+import {Trending_Img} from '../Data/constants';
+import { FlatGrid } from 'react-native-super-grid';
 
 export type Home = {
   id: string;
@@ -27,11 +29,14 @@ const categoriesData = [
   {id: '6', name: 'Television', image: require('../Assets/Television.png')},
   {id: '7', name: 'Bed', image: require('../Assets/Bed.png')},
 ];
+
 interface HomeProps {
   home: Home;
 }
 type RootStackParamList = {
   Categories: {categories: string[]};
+  Trending: {Trending: string[]};
+  Product: {Product: {id: string; name: string; image: any}[]};
 };
 
 const HomeComponents = ({home}: HomeProps) => {
@@ -109,34 +114,58 @@ const HomeComponents = ({home}: HomeProps) => {
       </View>
 
 
-      //lates view Container
+      //latest view Container
       <View style={styles.CategoriesContainer}>
         <View style={styles.HeadingCon}>
           <Text style={styles.Categories}>latest Products</Text>
          
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Categories', {categories: categoriesData})
+              navigation.navigate("Product" , {Product: Trending_Img})
             }
             style={styles.btn}>
             <Text style={styles.seeall_bottom}>See all</Text>
           </TouchableOpacity>
           </View>
-          
-          
+          </View>
+          {/* <View  style={styles.TrendingImgCont}>
+          {Trending_Img.map(Trending => (
+            <View key={Trending.id} style={styles.Clothes_Cont}>
+              <Image source={Trending.image} style={styles.Trending_image} />
+              <Text style={styles.CategoryText}>{Trending.name}</Text>
+            </View>
+          ))}
+               
+       </View> */}
+       
+       <FlatGrid
+      itemDimension={130}
+      data={Trending_Img}
+      style={styles.gridView}
+      spacing={10}
+      // fixed
+      
+      renderItem={({ item }) => (
+        <View style={[styles.itemContainer]}>
+          <View key={item.id} style={styles.Electronics}>
+            <Image source={item.image} style={styles.Item_image} />
+            {/* <Text style={styles.itemName}>{item.name}</Text> */}
+            <Text style={styles.itemName}>{item.name}</Text>
 
-
-
-      </View>
-    </ScrollView>
+          </View>
+        </View>
+      )}
+    />
+    
+    
+  </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   Container: {
+    flex: 1,
     backgroundColor: '#DFE6E9',
-    position: 'absolute',
-
     zIndex: 0,
   },
   HeaderContainer: {
@@ -232,6 +261,8 @@ const styles = StyleSheet.create({
   CategoriesContainer: {
     marginTop: 10,
     marginHorizontal: 10,
+    marginBottom: 0,
+   
   },
   HeadingCon: {
     marginTop: 10,
@@ -269,12 +300,65 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   Fashion_Cont: {
-    marginHorizontal: 25,
+    marginHorizontal: 20,
+    
   },
 
   CategoryText: {
     fontSize: 12,
     fontWeight: '400',
   },
+  
+  Clothes_Cont: {
+    marginHorizontal: 25,
+  },
+  Trending_image:{
+    height:200,
+    width:200,
+  },
+  gridView: {
+   
+    flex: 1,
+    marginHorizontal: 10,
+  },
+  itemContainer: {
+    
+    borderRadius: 20,
+    padding: 10,
+    height: 180,
+    alignItems: 'center',
+    // shadowColor: '#000',
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.2,
+    // shadowRadius: 4,
+    // elevation: 2, 
+    // width:160
+    backgroundColor:"#FFFFFF"
+    
+
+  },
+  itemName: {
+    fontSize: 20,
+    color: 'black',
+    fontWeight: '600',
+  },
+  Item_image:{
+    width: 130,
+    height: 120,
+    resizeMode:"center",
+    
+    borderRadius: 20,
+    marginBottom: 5,
+    
+    }
+    ,
+  photosContainer: {
+    
+    
+    
+    
+    marginBottom:"auto"
+  },
+  
 });
 export default HomeComponents;
