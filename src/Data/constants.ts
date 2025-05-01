@@ -59,21 +59,24 @@ export const PRODUCTS_LIST: Product[] = [
 
 
   export const Trending_Img=[
-    {id: '1', name: 'Men Shirts', image: require('../Assets/Clothes/C2.png')},
-    {id: '2', name: 'T-shirts', image: require('../Assets/Clothes/C3.png')},
-    {id: '3', name: 'Kurta', image: require('../Assets/Clothes/C4.png')},
-    {id: '4', name: 'Saree', image: require('../Assets/Clothes/C6.webp')},
-    {id: '5', name: 'Varanasi Saree', image: require('../Assets/Clothes/C7.jpeg')},
-    {id: '6', name: 'Washing Machine', image: require('../Assets/Clothes/C8.jpeg')},
-    {id: '7', name: 'Iron', image: require('../Assets/Clothes/C9.jpeg')},
-    {id: '8', name: 'Washing Machine', image: require('../Assets/Clothes/C10.jpeg')},
-    {id: '9', name: 'Bed', image: require('../Assets/Clothes/C11.jpeg')},
-    {id: '10', name: 'Green Color Top', image: require('../Assets/Clothes/C12.jpeg')},
-    {id: '11', name: 'Yellow Top', image: require('../Assets/Clothes/C13.jpeg')},
-    {id: '12', name: 'Regular fit Top', image: require('../Assets/Clothes/C14.jpeg')},
-    {id: '13', name: 'White Top', image: require('../Assets/Clothes/C15.jpeg')},
-    {id: '14', name: 'Kurti', image: require('../Assets/Clothes/C16.jpeg')},
-    {id: '15', name: 'White Shirt', image: require('../Assets/Clothes/C16.jpeg')},
+    {id: '1', name: 'Men Shirts', image: require('../Assets/Clothes/C2.png'), originalPrice: "79990",rating: 4.1,
+      tag:""
+    },
+    {id: '2', name: 'T-shirts', image: require('../Assets/Clothes/C3.png'),rating: 4.4,originalPrice:"2000"},
+    {id: '3', name: 'Kurta', image: require('../Assets/Clothes/C4.png'),rating: 4.9,originalPrice:"2000"},
+    {id: '4', name: 'Saree', image: require('../Assets/Clothes/C6.webp'),rating: 4.7,originalPrice:"2000"},
+    {id: '5', name: 'Varanasi Saree', image: require('../Assets/Clothes/C7.jpeg'),rating: 4.5,originalPrice:"2000"},
+    {id: '6', name: 'Washing Machine', image: require('../Assets/Clothes/C8.jpeg'),rating: 4.3,originalPrice:"₹31,880",Tag:"SAMSUNG 7 kg 5 star, EcoBubble Technology, Hygiene Steam Digital Inverter Fully Automatic Front Load Washing Machine with In-built Heater Grey  (WW70R22EK0X/TL)",},
+    {id: '7', name: 'Haier Washing Machine', image: require('../Assets/Clothes/C9.jpeg'),rating: 2.7,originalPrice:"2000",Tags:"SAMSUNG 8 kg Fully Automatic Front Load Washing Machine with In-built Heater Black, Grey  (WW80T504DAX1TL)"},
+    {id: '8', name: 'Iron', image: require('../Assets/Clothes/C10.jpeg'),rating: 3.7,originalPrice:"2000",Tags:"Orient Electric Fabripress DIFP10BP 1000 W Dry Iron  (Turquoise, Black)#JustHere"},
+    {id: '9', name: 'Bed', image: require('../Assets/Clothes/C11.jpeg'),rating: 2.7,originalPrice:"2000",Tags:"Wooden Street Adolph Sheesham Wood Without Storage Bed/Solid Wood Bed From Room/Wooden Cot Solid Wood King Bed  (Finish Color - Walnut Finish, Delivery Condition - Knock Down)"},
+    {id: '10', name: 'Green Color Top', image: require('../Assets/Clothes/C12.jpeg'),rating: 5.9,originalPrice:"2000",Tags:"Casual Regular Sleeves Solid Women Green Top"},
+    {id: '11', name: 'Yellow Top', image: require('../Assets/Clothes/C13.jpeg'),rating: 3.7,originalPrice:"2000",Tags:"Casual Sleeveless Solid Women Yellow Top"},
+    {id: '12', name: 'Regular fit Top', image: require('../Assets/Clothes/C14.jpeg'),rating: 2.7,originalPrice:"2000",Tags:"Casual Regular Sleeves Printed Women Dark Blue Top"},
+    {id: '13', name: 'White Top', image: require('../Assets/Clothes/C15.jpeg'),rating: 4.9,originalPrice:"2000",Tags:"Casual Regular Sleeves Embroidered Women Multicolor Top"},
+
+    {id: '14', name: 'Kurti', image: require('../Assets/Clothes/C16.jpeg'),rating: 5,originalPrice:"2000",Tags:"Women Embroidered Cotton Rayon A-line Kurta "},
+    {id: '15', name: 'White Shirt', image: require('../Assets/Clothes/c1.png'),rating: 4.5,originalPrice:"2000",Tags:"Men Regular Fit Solid Spread Collar Casual Shirt"},
     
   ]
   

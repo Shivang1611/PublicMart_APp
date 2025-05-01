@@ -19,10 +19,23 @@ const Product = ({ route }: TrendingProps) => {
         data={Trending_Img}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
+          
+          <View style={styles.mainContainer}>
           <View style={styles.itemContainer}>
             <Image source={item.image} style={styles.itemImage} />
             <Text style={styles.itemText}>{item.name}</Text>
-          </View>
+            
+            </View>
+            <View style={styles.itemDetails}>
+            
+            <Text style={styles.itemPrice}>₹ {item.originalPrice}</Text>
+            <Text style={styles.itemRating}>⭐{item.rating}</Text>
+
+            </View>
+            
+            
+            </View>
+          
         )}
       />
     </View>
@@ -37,24 +50,58 @@ const styles = StyleSheet.create({
     backgroundColor: '#DFE6E9',
     padding: 10,
   },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
+  
   itemContainer: {
+    
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    marginBottom:0,
+    height: 100,
+    width:"auto",
+    
+    
   },
   itemImage: {
-    width: 50,
-    height: 50,
+    width: 100,
+    height: 100,
     marginRight: 10,
+    resizeMode:"contain"
   },
   itemText: {
     fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 10,
   },
+  itemDetails:{
+    marginBottom:0,
+    flexDirection: 'row',
+    
+  },
+  itemPrice: {
+    fontSize: 16,
+    fontWeight: 'bold',
+   
+   marginHorizontal:120,
+   paddingBottom:20,
+  },
+  itemRating: {
+    fontSize: 16,
+    
+    marginHorizontal:20,
+    marginBottom:5
+  },
+  mainContainer:{
+    
+    justifyContent: 'space-between',
+    
+    marginTop: 5,
+    width: '100%',
+    marginBottom: 'auto',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    
+  },
+
+
 });
