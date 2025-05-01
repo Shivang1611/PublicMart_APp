@@ -11,6 +11,8 @@ interface CategoriesProps {
 
 const Categories = ({ route }: CategoriesProps) => {
   const { categories } = route.params; 
+  
+
 
   return (
     <View style={styles.container}>

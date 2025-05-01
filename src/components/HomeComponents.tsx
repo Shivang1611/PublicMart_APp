@@ -38,6 +38,8 @@ export type RootStackParamList = {
   Trending: {Trending: string[],Tags:string};
   Product: {Product: {id: string; name: string; image: any;Tags:string}[]};
   Details: {details: {id: string; name: string; image: any}};
+  BuyNow: {buyNow: string[]};
+  AddToKart: {addToKart: string[]};
 };
 
 const HomeComponents = ({home}: HomeProps) => {

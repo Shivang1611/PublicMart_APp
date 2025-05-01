@@ -66,7 +66,7 @@ export const PRODUCTS_LIST: Product[] = [
     {id: '3', name: 'Kurta', image: require('../Assets/Clothes/C4.png'),rating: 4.9,originalPrice:"2000"},
     {id: '4', name: 'Saree', image: require('../Assets/Clothes/C6.webp'),rating: 4.7,originalPrice:"2000"},
     {id: '5', name: 'Varanasi Saree', image: require('../Assets/Clothes/C7.jpeg'),rating: 4.5,originalPrice:"2000"},
-    {id: '6', name: 'Washing Machine', image: require('../Assets/Clothes/C8.jpeg'),rating: 4.3,originalPrice:"₹31,880",Tag:"SAMSUNG 7 kg 5 star, EcoBubble Technology, Hygiene Steam Digital Inverter Fully Automatic Front Load Washing Machine with In-built Heater Grey  (WW70R22EK0X/TL)",},
+    {id: '6', name: 'Washing Machine', image: require('../Assets/Clothes/C8.jpeg'),rating: 4.3,originalPrice:"31,880",Tag:"SAMSUNG 7 kg 5 star, EcoBubble Technology, Hygiene Steam Digital Inverter Fully Automatic Front Load Washing Machine with In-built Heater Grey  (WW70R22EK0X/TL)",},
     {id: '7', name: 'Haier Washing Machine', image: require('../Assets/Clothes/C9.jpeg'),rating: 2.7,originalPrice:"2000",Tags:"SAMSUNG 8 kg Fully Automatic Front Load Washing Machine with In-built Heater Black, Grey  (WW80T504DAX1TL)"},
     {id: '8', name: 'Iron', image: require('../Assets/Clothes/C10.jpeg'),rating: 3.7,originalPrice:"2000",Tags:"Orient Electric Fabripress DIFP10BP 1000 W Dry Iron  (Turquoise, Black)#JustHere"},
     {id: '9', name: 'Bed', image: require('../Assets/Clothes/C11.jpeg'),rating: 2.7,originalPrice:"2000",Tags:"Wooden Street Adolph Sheesham Wood Without Storage Bed/Solid Wood Bed From Room/Wooden Cot Solid Wood King Bed  (Finish Color - Walnut Finish, Delivery Condition - Knock Down)"},

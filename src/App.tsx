@@ -10,6 +10,8 @@ import Home from './Screens/Home'
 import Product from './Screens/Product'
 import Details from './Screens/Details'
 import Categories from './Screens/Categories'
+import BuyNowBtn from './Screens/BuyNowBtn'
+import AddtoKart from './Screens/AddtoKart'
 
 
 //types
@@ -24,10 +26,18 @@ export type Rootstackparamlist={
     category:Product
   },
   Details:{
-    details:Product
+    details:undefined
   },
   Product:{
     product:Product
+  }
+  BuyNow:{
+    buy:Product
+  }
+  
+  AddtoKart:{
+    add:undefined;
+
   }
 }
 
@@ -73,7 +83,15 @@ const App = () => {
       <stack.Screen name="Details" component={Details} options={{
         title:"Details"
       }}/>
+      <stack.Screen name="BuyNow" component={BuyNowBtn} options={{
+        title:"Buy Now",
+      }}/>
+      <stack.Screen name="AddtoKart" component={AddtoKart} options={{
+        title:"Add to Kart",
+      }}/>
+
     </stack.Navigator>
+    
    </NavigationContainer>
   )
 }
