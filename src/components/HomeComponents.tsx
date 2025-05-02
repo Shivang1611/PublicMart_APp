@@ -23,11 +23,15 @@ export type Home = {
 const categoriesData = [
   {id: '1', name: 'Electronics', image: require('../Assets/Electronics.png')},
   {id: '2', name: 'Fashion', image: require('../Assets/Fashion.png')},
-  {id: '3', name: 'Clothes', image: require('../Assets/Clothes.png')},
-  {id: '4', name: 'Wardrobe', image: require('../Assets/Wardrobe.png')},
-  {id: '5', name: 'Furnitures', image: require('../Assets/Furniture.png')},
-  {id: '6', name: 'Television', image: require('../Assets/Television.png')},
-  {id: '7', name: 'Bed', image: require('../Assets/Bed.png')},
+  {id: "3", name:"Headphones", image: require('../Assets/hea.png')},
+  {id: '4', name: 'Clothes', image: require('../Assets/Clothes.png')},
+  {id: '5', name: 'Wardrobe', image: require('../Assets/Wardrobe.png')},
+  {id: '6', name: 'Furnitures', image: require('../Assets/Furniture.png')},
+  {id: '7', name: 'Television', image: require('../Assets/Television.png')},
+  {id: '8', name: 'Bed', image: require('../Assets/Bed.png')},
+  
+  
+
 ];
 
 interface HomeProps {
@@ -85,7 +89,7 @@ const HomeComponents = ({home}: HomeProps) => {
         />
       </View>
       //Trending Image Container
-      <View style={styles.container2}>
+      <TouchableOpacity style={styles.container2} onPress={() =>navigation.navigate('Details', {details: Trending_Img[16]})}>
         <ImageBackground
           source={require('../Assets/HeadPhone.jpg')}
           style={styles.trendingheadphoneimg}>
@@ -96,7 +100,7 @@ const HomeComponents = ({home}: HomeProps) => {
             <Text style={styles.txt2}>Exclusive Sales...</Text>
           </View>
         </ImageBackground>
-      </View>
+      </TouchableOpacity>
       //Categories Container
       <View style={styles.CategoriesContainer}>
         <View style={styles.HeadingCon}>

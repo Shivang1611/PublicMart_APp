@@ -12,6 +12,7 @@ import Details from './Screens/Details'
 import Categories from './Screens/Categories'
 import BuyNowBtn from './Screens/BuyNowBtn'
 import AddtoKart from './Screens/AddtoKart'
+import TrendingCont from './Screens/TrendingCont'
 
 
 //types
@@ -38,6 +39,9 @@ export type Rootstackparamlist={
   AddtoKart:{
     add:undefined;
 
+  }
+  TrendingCont:{
+    TRENDING:Product
   }
 }
 
@@ -88,6 +92,9 @@ const App = () => {
       }}/>
       <stack.Screen name="AddtoKart" component={AddtoKart} options={{
         title:"Add to Kart",
+      }}/>
+      <stack.Screen name="TrendingCont" component={TrendingCont} options={{
+        title:"Trending Products",
       }}/>
 
     </stack.Navigator>

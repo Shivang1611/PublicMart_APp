@@ -90,6 +90,15 @@ export const PRODUCTS_LIST: Product[] = [
 
     {id: '14', name: 'Kurti', image: require('../Assets/Clothes/C16.jpeg'),rating: 5,originalPrice:"2000",Tags:"Women Embroidered Cotton Rayon A-line Kurta ",Categories:"Fashion",},
     {id: '15', name: 'White Shirt', image: require('../Assets/Clothes/c1.png'),rating: 4.5,originalPrice:"2000",Tags:"Men Regular Fit Solid Spread Collar Casual Shirt",Categories:"Clothes",},
+    {id: '16', name: 'Mivi Duopods', image: require('../Assets/Clothes/Headphone2.jpeg'),rating: 4.5,originalPrice:"599",Tags:"Mivi Duopods K2, 40Hrs PT, HD Call, Fast Charging, 50ms Latency,IPX4, Voice Asst.5.3v Bluetooth  (Black, True Wireless)",Categories:"Headphones",},
+    {id: '17', name: 'Boat Headphone', image: require('../Assets/Clothes/Headphone3.jpeg'),rating: 4.9,originalPrice:"1299",Tags:"boAt Rockerz 450 Bluetooth Headset  (Black, On the Ear)",Categories:"Headphones",},
+    {id: '18', name: 'ZEBRONICS Zeb-Thunde', image: require('../Assets/Clothes/Headphone1.jpeg'),rating: 4.1,originalPrice:"699",Tags:"ZEBRONICS Zeb-Thunder (Sea Green) Bluetooth  (Sea Green, On the Ear)",Categories:"Headphones",},
+    {id: '19', name: 'ZEBRONICS Zeb-Rush', image: require('../Assets/Clothes/Headphone4.jpeg'),rating: 4.3,originalPrice:"699",Tags:"ZEBRONICS Zeb-Rush (Black) Bluetooth  (Black, On the Ear)",Categories:"Headphones",},
+    {id: '20', name: 'trukeBTG1', image: require('../Assets/Clothes/EarBuds.jpeg'),rating: 4.7,originalPrice:"1299",Tags:"truke BTG1 Earbuds with Game Mode, 48H Playtime, Quad Mic ENC, 13mm driver, AAC codec Bluetooth  (Black, True Wireless)",Categories:"Headphones",},
+
+    
+    
+    
     
   ]
   

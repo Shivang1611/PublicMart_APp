@@ -16,17 +16,25 @@ const Categories = ({ route }: CategoriesProps) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   
 
-  const filteredProducts = categories==="All"? Trending_Img: Trending_Img.filter((product) => product.Categories.includes(categories) );
+  const filteredProducts = categories==="All" ? Trending_Img: Trending_Img.filter((product) => product.Categories.includes(categories) );
   return (
     <View style={styles.container}>
      <Text style={styles.header}>{categories}</Text>
       <FlatList
         data={filteredProducts}
         keyExtractor={(item) => item.id}
+        
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.itemContainer} onPress={() => navigation.navigate('Details', { details: item })}>
+          <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate('Details', { details: item })}>
+             <View style={styles.itemContainer}>
             <Image source={item.image} style={styles.itemImage} />
             <Text style={styles.itemText}>{item.name}</Text>
+            </View>
+
+            <View style={styles.itemDetails}>
+              <Text style={styles.itemPrice}>₹ {item.originalPrice}</Text>
+              <Text style={styles.itemRating}>⭐{item.rating}</Text>
+            </View>
           </TouchableOpacity>
 
 
@@ -53,15 +61,49 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    marginBottom:0,
+    height: 100,
+    width:"auto",
+    
+   
   },
   itemImage: {
-    width: 50,
-    height: 50,
+    width: 100,
+    height: 100,
     marginRight: 10,
+    resizeMode:"contain"
   },
   itemText: {
     fontSize: 18,
   },
+  itemDetails:{
+    marginBottom:0,
+    flexDirection: 'row',
+    
+  },
+  itemPrice: {
+    fontSize: 16,
+    fontWeight: 'bold',
+   
+   marginHorizontal:120,
+   paddingBottom:20,
+  },
+  itemRating: {
+    fontSize: 16,
+    
+    marginHorizontal:20,
+    marginBottom:5
+  },
+  mainContainer:{
+    
+    justifyContent: 'space-between',
+    
+    marginTop: 5,
+    width: '100%',
+    marginBottom: 'auto',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    
+  },
+  
 });
