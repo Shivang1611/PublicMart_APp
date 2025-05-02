@@ -33,7 +33,7 @@ name: string;
 image: any;
 originalPrice?: number;
 rating?: number;
-Tags?: string;;
+Tags?: string;
 }
 }
 }

@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../components/HomeComponents'; // Adjust the path as needed
+import { Trending_Img } from '../Data/constants';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
 
 type CategoriesScreenRouteProp = RouteProp<RootStackParamList, 'Categories'>;
 
@@ -11,20 +13,23 @@ interface CategoriesProps {
 
 const Categories = ({ route }: CategoriesProps) => {
   const { categories } = route.params; 
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   
 
-
+  const filteredProducts = categories==="All"? Trending_Img: Trending_Img.filter((product) => product.Categories.includes(categories) );
   return (
     <View style={styles.container}>
-     
+     <Text style={styles.header}>{categories}</Text>
       <FlatList
-        data={categories}
+        data={filteredProducts}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
+          <TouchableOpacity style={styles.itemContainer} onPress={() => navigation.navigate('Details', { details: item })}>
             <Image source={item.image} style={styles.itemImage} />
             <Text style={styles.itemText}>{item.name}</Text>
-          </View>
+          </TouchableOpacity>
+
+
         )}
       />
     </View>

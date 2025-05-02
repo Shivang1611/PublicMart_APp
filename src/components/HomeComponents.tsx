@@ -40,6 +40,11 @@ export type RootStackParamList = {
   Details: {details: {id: string; name: string; image: any}};
   BuyNow: {buyNow: string[]};
   AddToKart: {addToKart: string[]};
+  Electronics: {Electronics: string[],Category: string[]};
+  Fashion: {Fashion: string[]};
+  Clothes: {Clothes: string[]};
+  Wardrobe: {Wardrobe: string[]};
+  Furnitures: {Furnitures: string[]};
 };
 
 const HomeComponents = ({home}: HomeProps) => {
@@ -99,7 +104,7 @@ const HomeComponents = ({home}: HomeProps) => {
 
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Categories', {categories: categoriesData})
+              navigation.navigate('Categories', {categories: "All"})
             }
             style={styles.btn}>
             <Text style={styles.seeall_bottom}>See all</Text>
@@ -108,10 +113,12 @@ const HomeComponents = ({home}: HomeProps) => {
 
         <ScrollView horizontal={true} style={styles.CategoryImgCont}>
           {categoriesData.map(category => (
-            <View key={category.id} style={styles.Fashion_Cont}>
+            <TouchableOpacity key={category.id} style={styles.Fashion_Cont} onPress={() =>
+              navigation.navigate('Categories', {categories: category.name})
+            }>
               <Image source={category.image} style={styles.category_image} />
               <Text style={styles.CategoryText}>{category.name}</Text>
-            </View>
+            </TouchableOpacity>
           ))}
         </ScrollView>
       </View>

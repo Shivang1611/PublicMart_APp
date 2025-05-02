@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../components/HomeComponents'; // Adjust the path as needed
 import { Trending_Img } from '../Data/constants';
+import  {PropsWithChildren, useState} from 'react';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
 type CategoriesScreenRouteProp = RouteProp<RootStackParamList, 'Trending'>;
 
 interface TrendingProps {
@@ -11,6 +13,7 @@ interface TrendingProps {
 
 const Product = ({ route }: TrendingProps) => {
   const { Trending } = route.params; 
+   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
     <View style={styles.container}>
@@ -20,7 +23,7 @@ const Product = ({ route }: TrendingProps) => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           
-          <View style={styles.mainContainer}>
+          <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate('Details', { details: item })}>
           <View style={styles.itemContainer}>
             <Image source={item.image} style={styles.itemImage} />
             <Text style={styles.itemText}>{item.name}</Text>
@@ -34,7 +37,7 @@ const Product = ({ route }: TrendingProps) => {
             </View>
             
             
-            </View>
+            </TouchableOpacity>
           
         )}
       />

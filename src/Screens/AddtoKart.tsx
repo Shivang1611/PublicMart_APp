@@ -8,7 +8,6 @@ const AddtoKart = () => {
     </View>
   )
 }
-
+const styles = StyleSheet.create({})
 export default AddtoKart
 
-const styles = StyleSheet.create({})
