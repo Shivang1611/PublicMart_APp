@@ -1,14 +1,16 @@
 interface Product{
     id:string,
     name:string,
-    imageUrl:string,
-    originalPrice:number,
+   
+    image:any,
+    originalPrice:string,
     
-    discountPrice:number,
-    offerPercentage:number,
+    
+    
     rating:number,
-    ratingCount:number,
-    tags: string[]
+    
+    Tags: string,
+    Categories: string,
 
 }
 interface Home{

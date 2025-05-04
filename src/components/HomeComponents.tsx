@@ -20,43 +20,59 @@ export type Home = {
   name: string;
   image: string;
 };
+
+
+
+//importing svg image for logo
+
+
+
+
+
+
+
 const categoriesData = [
   {id: '1', name: 'Electronics', image: require('../Assets/Electronics.png')},
   {id: '2', name: 'Fashion', image: require('../Assets/Fashion.png')},
-  {id: "3", name:"Headphones", image: require('../Assets/hea.png')},
+  {id: '3', name: 'Headphones', image: require('../Assets/hea.png')},
   {id: '4', name: 'Clothes', image: require('../Assets/Clothes.png')},
   {id: '5', name: 'Wardrobe', image: require('../Assets/Wardrobe.png')},
   {id: '6', name: 'Furnitures', image: require('../Assets/Furniture.png')},
   {id: '7', name: 'Television', image: require('../Assets/Television.png')},
   {id: '8', name: 'Bed', image: require('../Assets/Bed.png')},
-  
-  
-
 ];
 
 interface HomeProps {
   home: Home;
+  
+  
 }
 export type RootStackParamList = {
   Categories: {categories: string[]};
-  Trending: {Trending: string[],Tags:string};
-  Product: {Product: {id: string; name: string; image: any;Tags:string}[]};
+  Trending: {Trending: string[]; Tags: string};
+  Product: {Product: {id: string; name: string; image: any; Tags: string}[]};
   Details: {details: {id: string; name: string; image: any}};
-  BuyNow: {buyNow: string[]};
+  BuyNow: {details?: {id: string; name: string; image: any}};
   AddToKart: {addToKart: string[]};
-  Electronics: {Electronics: string[],Category: string[]};
+  Electronics: {Electronics: string[]; Category: string[]};
   Fashion: {Fashion: string[]};
   Clothes: {Clothes: string[]};
   Wardrobe: {Wardrobe: string[]};
   Furnitures: {Furnitures: string[]};
+  Home:undefined;
 };
+
 
 const HomeComponents = ({home}: HomeProps) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [search, setSearch] = useState('');
   const onChangeSearch = (query: string) => setSearch(query);
+ 
 
+  
   return (
+    <>
+    <View style={styles.mainContainer}>
     <ScrollView style={styles.Container}>
       <View style={styles.HeaderContainer}>
         <Text style={styles.top}>location</Text>
@@ -89,7 +105,11 @@ const HomeComponents = ({home}: HomeProps) => {
         />
       </View>
       //Trending Image Container
-      <TouchableOpacity style={styles.container2} onPress={() =>navigation.navigate('Details', {details: Trending_Img[16]})}>
+      <TouchableOpacity
+        style={styles.container2}
+        onPress={() =>
+          navigation.navigate('Details', {details: Trending_Img[16]})
+        }>
         <ImageBackground
           source={require('../Assets/HeadPhone.jpg')}
           style={styles.trendingheadphoneimg}>
@@ -108,7 +128,7 @@ const HomeComponents = ({home}: HomeProps) => {
 
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Categories', {categories: "All"})
+              navigation.navigate('Categories', {categories: 'All'})
             }
             style={styles.btn}>
             <Text style={styles.seeall_bottom}>See all</Text>
@@ -117,9 +137,12 @@ const HomeComponents = ({home}: HomeProps) => {
 
         <ScrollView horizontal={true} style={styles.CategoryImgCont}>
           {categoriesData.map(category => (
-            <TouchableOpacity key={category.id} style={styles.Fashion_Cont} onPress={() =>
-              navigation.navigate('Categories', {categories: category.name})
-            }>
+            <TouchableOpacity
+              key={category.id}
+              style={styles.Fashion_Cont}
+              onPress={() =>
+                navigation.navigate('Categories', {categories: category.name})
+              }>
               <Image source={category.image} style={styles.category_image} />
               <Text style={styles.CategoryText}>{category.name}</Text>
             </TouchableOpacity>
@@ -154,16 +177,15 @@ const HomeComponents = ({home}: HomeProps) => {
         data={Trending_Img}
         style={styles.gridView}
         spacing={10}
-        // fixed
+       
 
         renderItem={({item}) => (
-          <TouchableOpacity style={[styles.itemContainer]} onPress={() =>
-            navigation.navigate('Details', {details: item})
-
-          }>
+          <TouchableOpacity
+            style={[styles.itemContainer]}
+            onPress={() => navigation.navigate('Details', {details: item})}>
             <View key={item.id} style={styles.Electronics}>
               <Image source={item.image} style={styles.Item_image} />
-             
+
               <Text style={styles.itemName}>{item.name}</Text>
               <View style={styles.photosContainer}>
                 <Text style={styles.itemPrice}>₹ {item.originalPrice}</Text>
@@ -174,14 +196,21 @@ const HomeComponents = ({home}: HomeProps) => {
         )}
       />
     </ScrollView>
+   
+    </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  Container: {
+  mainContainer:{
     flex: 1,
+    
+  },
+  Container: {
+   
     backgroundColor: '#DFE6E9',
-    zIndex: 0,
+   
   },
   HeaderContainer: {
     marginTop: 10,
@@ -378,5 +407,16 @@ const styles = StyleSheet.create({
     color: '#2d3436',
     marginLeft: 'auto',
   },
+  iconimage:{
+    height:30,
+    width:30,
+  },
+  logoContainer:{
+    backgroundColor:'#DFE6E9',
+    flexDirection:'row',
+    justifyContent:'space-around',
+    alignItems:'center',
+    
+  }
 });
 export default HomeComponents;

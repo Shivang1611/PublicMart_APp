@@ -4,39 +4,18 @@ import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../components/HomeComponents'; 
 import  {PropsWithChildren, useState} from 'react';
 import {useNavigation, NavigationProp} from '@react-navigation/native';
-import BuyNowBtn from './BuyNowBtn';
+import BuyNowBtn from './BuyNow';
 
-type TrendingItem = {
-  id: string; 
-  image: any; 
-  name: string;
-  originalPrice?: number;
-  rating?: number;
-  Tags?: string;
-};
+
 export type RootStackParamList = {
-  Categories: {categories: string[]};
-  Trending: {Trending: string[],Tags:string};
-  Product: {Product: {id: string; name: string; image: any;Tags:string}[]};
-  Details: {details: {id: string; name: string; image: any}};
-  BuyNow:  {details: {
-    id: string;
-    name: string;
-    image: any;
-    originalPrice?: number;
-    rating?: number;
-    Tags?: string;
-  };
-}
-AddToKart:{details:{id: string;
-name: string;
-image: any;
-originalPrice?: number;
-rating?: number;
-Tags?: string;
-}
-}
-}
+  Home: undefined;
+  Categories: { categories: string[] };
+  Details: { details: Product };
+  Product: { product: Product };
+  BuyNow: { details?:{id:string, name:string, originalPrice:number, rating:number, Tags:string} };
+  AddtoKart:{details: Product}
+  TrendingCont: { trendingProducts: Product[] };
+};
 
 type TrendingScreenRouteProp = RouteProp<RootStackParamList, 'Details'>; 
 

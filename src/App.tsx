@@ -10,39 +10,34 @@ import Home from './Screens/Home'
 import Product from './Screens/Product'
 import Details from './Screens/Details'
 import Categories from './Screens/Categories'
-import BuyNowBtn from './Screens/BuyNowBtn'
+import BuyNow from './Screens/BuyNow'
 import AddtoKart from './Screens/AddtoKart'
-import TrendingCont from './Screens/TrendingCont'
+import AppNavigator from './Screens/AppNavigator';
+
 
 
 //types
 export type Rootstackparamlist={
-  HomePage:{
-    home:Product
-  },
-  Home:{
-    home:Home
-  },
+ 
+  Home:undefined;
   Categories:{
-    category:Product
+   categories:string[],
   },
+  
   Details:{
-    details:undefined
+    details:Product,
   },
   Product:{
-    product:Product
+    Product:Product[]
   }
   BuyNow:{
-    buy:Product
+    details:Product,
   }
   
-  AddtoKart:{
-    add:undefined;
-
-  }
-  TrendingCont:{
-    TRENDING:Product
-  }
+  
+  AddtoKart:{details: Product} ,
+  TrendingCont: { trendingProducts: Product[] }
+  AppNavigator: undefined;
 }
 
 
@@ -52,10 +47,9 @@ const stack=createNativeStackNavigator<Rootstackparamlist>()
 const App = () => {
   return (
    <NavigationContainer>
-     <stack.Navigator initialRouteName='Home'> 
-      <stack.Screen name='Home' component={Home} options={{
-            headerShown: false, 
-          }} />
+     <stack.Navigator initialRouteName='AppNavigator' screenOptions={{headerShown:false}}> 
+      
+     <stack.Screen name="AppNavigator" component={AppNavigator} />
       <stack.Screen name="Categories" component={Categories} options={{
         title:"Categories",
         headerBackButtonDisplayMode:"default",
@@ -87,17 +81,18 @@ const App = () => {
       <stack.Screen name="Details" component={Details} options={{
         title:"Details"
       }}/>
-      <stack.Screen name="BuyNow" component={BuyNowBtn} options={{
+      <stack.Screen name="BuyNow" component={BuyNow}options={{
         title:"Buy Now",
       }}/>
       <stack.Screen name="AddtoKart" component={AddtoKart} options={{
         title:"Add to Kart",
       }}/>
-      <stack.Screen name="TrendingCont" component={TrendingCont} options={{
-        title:"Trending Products",
-      }}/>
+       
+      
 
     </stack.Navigator>
+    
+   
     
    </NavigationContainer>
   )

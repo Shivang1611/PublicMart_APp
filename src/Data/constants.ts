@@ -1,6 +1,6 @@
 import Categories from "../Screens/Categories";
 
-export const PRODUCTS_LIST: Product[] = [
+export const PRODUCTS_LIST = [
     {
       id: '1',
       name: 'APPLE iPhone 14 (Blue, 128 GB)',
@@ -16,6 +16,7 @@ export const PRODUCTS_LIST: Product[] = [
         '12MP Dual Rear Camera',
         '15.49 cm (6.1 inch) Super Retina XDR Display',
       ],
+      Categories: 'Electronics',
     },
     {
       id: '2',
@@ -28,7 +29,8 @@ export const PRODUCTS_LIST: Product[] = [
       rating: 4.7,
       ratingCount: 8794,
       tags: ['12MP Front Camera', '15.49 cm (6.1 inch) Super Retina XDR Display'],
-    },
+   
+    Categories: 'Electronics',},
     {
       id: '3',
       name: 'APPLE iPhone 14 (Purple, 128 GB)',
@@ -40,7 +42,8 @@ export const PRODUCTS_LIST: Product[] = [
       rating: 4.7,
       ratingCount: 8794,
       tags: ['12MP Dual Rear Camera', '15.49 cm Super Retina XDR Display'],
-    },
+   
+    Categories: 'Electronics',},
     {
       id: '4',
       name: 'APPLE iPhone 11 (White, 64 GB)',
@@ -56,26 +59,27 @@ export const PRODUCTS_LIST: Product[] = [
         '12MP Dual Rear Camera',
         '15.49 cm (6.1 inch) Super Retina XDR Display',
       ],
+      Categories: 'Electronics',
     },
   ];
 
 
-  export const Trending_Img=[
+  export const Trending_Img:Product[]=[
     {id: '1', name: 'Men Shirts', image: require('../Assets/Clothes/C2.png'), originalPrice: "79990",rating: 4.1,
-      tag:"",
+      Tags:"",
       Categories:"Clothes"
     },
     {id: '2', name: 'T-shirts', image: require('../Assets/Clothes/C3.png'),rating: 4.4,originalPrice:"2000",
-      Categories:"Clothes",
+      Categories:"Clothes",Tags:"",
     },
     {id: '3', name: 'Kurta', image: require('../Assets/Clothes/C4.png'),rating: 4.9,originalPrice:"2000",
-      Categories:"Clothes",
+      Categories:"Clothes",Tags:"",
     },
     {id: '4', name: 'Saree', image: require('../Assets/Clothes/C6.webp'),rating: 4.7,originalPrice:"2000",
-      Categories:"Fashion",
+      Categories:"Fashion",Tags:"",
     },
     {id: '5', name: 'Varanasi Saree', image: require('../Assets/Clothes/C7.jpeg'),rating: 4.5,originalPrice:"2000",
-      Categories:"Fashion",
+      Categories:"Fashion",Tags:"",
     },
     {id: '6', name: 'Washing Machine', image: require('../Assets/Clothes/C8.jpeg'),rating: 4.3,originalPrice:"31,880",Tags:"SAMSUNG 7 kg 5 star, EcoBubble Technology, Hygiene Steam Digital Inverter Fully Automatic Front Load Washing Machine with In-built Heater Grey  (WW70R22EK0X/TL)",
       Categories:"Electronics",

@@ -5,21 +5,21 @@ import { RootStackParamList } from '../components/HomeComponents'; // Adjust the
 import { Trending_Img } from '../Data/constants';
 import  {PropsWithChildren, useState} from 'react';
 import {useNavigation, NavigationProp} from '@react-navigation/native';
-type CategoriesScreenRouteProp = RouteProp<RootStackParamList, 'Trending'>;
+type CategoriesScreenRouteProp = RouteProp<RootStackParamList, 'Product'>;
 
 interface TrendingProps {
   route: CategoriesScreenRouteProp;
 }
 
 const Product = ({ route }: TrendingProps) => {
-  const { Trending } = route.params; 
+  const { Product } = route.params; 
    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
     <View style={styles.container}>
      
       <FlatList
-        data={Trending_Img}
+        data={Product}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           

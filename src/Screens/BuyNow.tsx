@@ -1,19 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
+
 import { RootStackParamList } from '../components/HomeComponents'; // Adjust the path as needed
 
-type BuyNowScreenRouteProp = RouteProp<RootStackParamList, 'BuyNow'>;
 
 interface BuyNowProps {
-  route: BuyNowScreenRouteProp;
+  route?: RouteProp<RootStackParamList, 'BuyNow'>
 }
 
-const BuyNowBtn = ({ route }: BuyNowProps) => {
-  const { details } = route.params;
+const BuyNow = ({ route }: BuyNowProps) => {
+  const { details } = route?.params||{details:null};
 
   if (!details) {
-    return <Text>No product details available</Text>;
+    return <View style={styles.container1}>
+    <Text style={{fontSize:16,backgroundColor:"#DFE6E9",flex:1}}>Work in Progress</Text>;
+    </View>;
   }
 
   return (
@@ -26,7 +28,7 @@ const BuyNowBtn = ({ route }: BuyNowProps) => {
   );
 };
 
-export default BuyNowBtn;
+export default BuyNow;
 
 const styles = StyleSheet.create({
   container: {
@@ -39,4 +41,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginVertical: 5,
   },
+  container1:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor:"#DFE6E9",
+    
+  }
 });

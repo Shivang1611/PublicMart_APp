@@ -8,15 +8,17 @@ import {useNavigation, NavigationProp} from '@react-navigation/native';
 type CategoriesScreenRouteProp = RouteProp<RootStackParamList, 'Categories'>;
 
 interface CategoriesProps {
-  route: CategoriesScreenRouteProp;
+  route?:RouteProp<RootStackParamList,"Categories">;
 }
 
 const Categories = ({ route }: CategoriesProps) => {
-  const { categories } = route.params; 
+  const { categories } = route?.params || { categories: ["All"] }; 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   
 
-  const filteredProducts = categories==="All" ? Trending_Img: Trending_Img.filter((product) => product.Categories.includes(categories) );
+  const filteredProducts = categories.includes("All")
+  ? Trending_Img
+  : Trending_Img.filter((product) => categories.includes(product.Categories));
   return (
     <View style={styles.container}>
      <Text style={styles.header}>{categories}</Text>
