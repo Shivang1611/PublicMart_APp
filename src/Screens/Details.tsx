@@ -1,10 +1,9 @@
 import { StyleSheet, Text, View, FlatList, Image,TouchableOpacity, ScrollView } from 'react-native';
 import React from 'react';
 import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../components/HomeComponents'; 
-import  {PropsWithChildren, useState} from 'react';
+
+
 import {useNavigation, NavigationProp} from '@react-navigation/native';
-import BuyNowBtn from './BuyNow';
 
 
 export type RootStackParamList = {

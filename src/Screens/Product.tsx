@@ -2,8 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../components/HomeComponents'; // Adjust the path as needed
-import { Trending_Img } from '../Data/constants';
-import  {PropsWithChildren, useState} from 'react';
+
 import {useNavigation, NavigationProp} from '@react-navigation/native';
 type CategoriesScreenRouteProp = RouteProp<RootStackParamList, 'Product'>;
 

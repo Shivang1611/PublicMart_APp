@@ -11,8 +11,9 @@ import Product from './Screens/Product'
 import Details from './Screens/Details'
 import Categories from './Screens/Categories'
 import BuyNow from './Screens/BuyNow'
-import AddtoKart from './Screens/AddtoKart'
+
 import AppNavigator from './Screens/AppNavigator';
+import AddToKart from './Screens/AddToKart'
 
 
 
@@ -35,7 +36,7 @@ export type Rootstackparamlist={
   }
   
   
-  AddtoKart:{details: Product} ,
+  AddToKart:{details: Product} ,
   TrendingCont: { trendingProducts: Product[] }
   AppNavigator: undefined;
 }
@@ -53,7 +54,7 @@ const App = () => {
       <stack.Screen name="Categories" component={Categories} options={{
         title:"Categories",
         headerBackButtonDisplayMode:"default",
-        
+        headerShown: true,
         headerStyle: {
           backgroundColor: '#DFE6E9',
         },
@@ -68,6 +69,7 @@ const App = () => {
       }}/>
       <stack.Screen name="Product" component={Product} options={{
         title:"Product",
+        headerShown: true,
         headerStyle: {
           backgroundColor: '#DFE6E9',
         },
@@ -79,13 +81,16 @@ const App = () => {
 
       }}/>
       <stack.Screen name="Details" component={Details} options={{
-        title:"Details"
+        title:"Details",
+        headerShown: true,
       }}/>
       <stack.Screen name="BuyNow" component={BuyNow}options={{
         title:"Buy Now",
+        headerShown: true,
       }}/>
-      <stack.Screen name="AddtoKart" component={AddtoKart} options={{
+      <stack.Screen name="AddToKart" component={AddToKart} options={{
         title:"Add to Kart",
+        headerShown: true,
       }}/>
        
       

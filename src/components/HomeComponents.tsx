@@ -74,21 +74,7 @@ const HomeComponents = ({home}: HomeProps) => {
     <>
     <View style={styles.mainContainer}>
     <ScrollView style={styles.Container}>
-      <View style={styles.HeaderContainer}>
-        <Text style={styles.top}>location</Text>
-        <View style={styles.location}>
-          <Image
-            source={require('../Assets/locationLogo.png')}
-            style={styles.locationimg}
-          />
-          <Text style={styles.locationtxt}> Uttar Pradesh , </Text>
-
-          <Image
-            source={require('../Assets/notification.png')}
-            style={styles.notificationimg}
-          />
-        </View>
-      </View>
+      
       //Search Containe
       <View style={styles.SearchContainer}>
         <Searchbar
@@ -128,7 +114,7 @@ const HomeComponents = ({home}: HomeProps) => {
 
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Categories', {categories: 'All'})
+              navigation.navigate('Categories', {categories:[ 'All']})
             }
             style={styles.btn}>
             <Text style={styles.seeall_bottom}>See all</Text>
@@ -212,36 +198,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#DFE6E9',
    
   },
-  HeaderContainer: {
-    marginTop: 10,
-  },
-  top: {
-    color: '#636E72',
-    marginTop: 10,
-    marginHorizontal: 15,
-    fontSize: 18,
-    fontWeight: '500',
-  },
-  location: {
-    marginTop: 5,
-    flexDirection: 'row',
-  },
-  locationimg: {
-    height: 20,
-    width: 20,
-    borderRadius: 15,
-    marginHorizontal: 10,
-  },
-  locationtxt: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  notificationimg: {
-    height: 30,
-    width: 30,
-    marginHorizontal: 180,
-    marginBottom: 15,
-  },
+  
+ 
+ 
   SearchContainer: {
     marginTop: 10,
   },

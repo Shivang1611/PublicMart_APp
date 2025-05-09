@@ -6,6 +6,10 @@ import Categories from '../Screens/Categories';
 
 import { Image, Text, StyleSheet } from 'react-native';
 import BuyNow from './BuyNow';
+import AddToKart from './AddToKart';
+import Myprofile from './Myprofile';
+
+
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +37,14 @@ const AppNavigator = () => {
               ?require('../Assets/Navigation/myorderOnpress.png')
               
               :require('../Assets/Navigation/myorder.png')
-            } else if (route.name === 'Add to Kart') {
+            }
+            else if (route.name === "My Profile") {
+              iconSource = focused
+                ? require('../Assets/Navigation/MyprofileOnpress.png')
+                
+              :require('../Assets/Navigation/Myprofile.png');
+            }
+             else if (route.name === 'AddToKart') {
               iconSource = focused
                 ? require('../Assets/Navigation/AddtokartOnpress.png')
                 
@@ -51,7 +62,12 @@ const AppNavigator = () => {
               label = 'Categories';
             } else if (route.name === 'My Orders') {
               label = 'My Orders';
-            } else if (route.name === 'Add to Kart') {
+            }
+            else if(route.name==="My Profile")
+            {
+              label= 'My Profile';
+            }
+             else if (route.name === 'AddToKart') {
               label = 'Add to Kart';
             }
 
@@ -70,7 +86,9 @@ const AppNavigator = () => {
        
         <Tab.Screen name="My Orders" component={BuyNow} />
         <Tab.Screen name="Categories" component={Categories} />
-        <Tab.Screen name="Add to Kart" component={Home} />
+        <Tab.Screen name="My Profile" component={Myprofile}/>
+        <Tab.Screen name="AddToKart" component={AddToKart} />
+        
        
       </Tab.Navigator>
     
