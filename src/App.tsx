@@ -1,108 +1,58 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 
 //for navigation
-import {NavigationContainer} from "@react-navigation/native"
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 //Screens
-import Home from './Screens/Home'
-import Product from './Screens/Product'
-import Details from './Screens/Details'
-import Categories from './Screens/Categories'
-import BuyNow from './Screens/BuyNow'
+
+import Product from './Screens/Product';
+import Details from './Screens/Details';
+import Categories from './Screens/Categories';
+import BuyNow from './Screens/BuyNow';
 
 import AppNavigator from './Screens/AppNavigator';
-import AddToKart from './Screens/AddToKart'
+import AddToKart from './Screens/AddToKart';
 
-
+//
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Router} from './routes/Router';
+import {AppwriteProvider} from './appwrite/AppwriteContext';
 
 //types
-export type Rootstackparamlist={
- 
-  Home:undefined;
-  Categories:{
-   categories:string[],
-  },
-  
-  Details:{
-    details:Product,
-  },
-  Product:{
-    Product:Product[]
-  }
-  BuyNow:{
-    details:Product,
-  }
-  
-  
-  AddToKart:{details: Product} ,
-  TrendingCont: { trendingProducts: Product[] }
+export type Rootstackparamlist = {
+  Home: undefined;
+  Categories: {
+    categories: string[];
+  };
+
+  Details: {
+    details: Product;
+  };
+  Product: {
+    Product: Product[];
+  };
+  BuyNow: {
+    details: Product;
+  };
+
+  AddToKart: {details: Product};
+  TrendingCont: {trendingProducts: Product[]};
   AppNavigator: undefined;
-}
+};
 
-
-const stack=createNativeStackNavigator<Rootstackparamlist>()
- 
+const stack = createNativeStackNavigator<Rootstackparamlist>();
 
 const App = () => {
   return (
-   <NavigationContainer>
-     <stack.Navigator initialRouteName='AppNavigator' screenOptions={{headerShown:false}}> 
-      
-     <stack.Screen name="AppNavigator" component={AppNavigator} />
-      <stack.Screen name="Categories" component={Categories} options={{
-        title:"Categories",
-        headerBackButtonDisplayMode:"default",
-        headerShown: true,
-        headerStyle: {
-          backgroundColor: '#DFE6E9',
-        },
-        headerTitleAlign: "center",
-        headerTitleStyle: {
-          fontSize: 24,
-          fontWeight: 'bold',
-        },
-          
-       
-        
-      }}/>
-      <stack.Screen name="Product" component={Product} options={{
-        title:"Product",
-        headerShown: true,
-        headerStyle: {
-          backgroundColor: '#DFE6E9',
-        },
-        headerTitleAlign: "center",
-        headerTitleStyle: {
-          fontSize: 24,
-          fontWeight: 'bold',
-        },
+    <SafeAreaProvider>
+      <AppwriteProvider>
+        <Router />
+      </AppwriteProvider>
+    </SafeAreaProvider>
+  );
+};
 
-      }}/>
-      <stack.Screen name="Details" component={Details} options={{
-        title:"Details",
-        headerShown: true,
-      }}/>
-      <stack.Screen name="BuyNow" component={BuyNow}options={{
-        title:"Buy Now",
-        headerShown: true,
-      }}/>
-      <stack.Screen name="AddToKart" component={AddToKart} options={{
-        title:"Add to Kart",
-        headerShown: true,
-      }}/>
-       
-      
-
-    </stack.Navigator>
-    
-   
-    
-   </NavigationContainer>
-  )
-}
-
-const styles = StyleSheet.create({})
-export default App
-
+const styles = StyleSheet.create({});
+export default App;
